@@ -7,6 +7,9 @@ import menuRoute from "./routes/menuRoute.js";
 import nodemailer from "nodemailer"
 import cors from "cors";
 import bodyParser from "body-parser";
+import dotenv from 'dotenv';
+dotenv.config();
+const gmailPin = process.env.GMAIL_PIN
 // import jwt from "jsonwebtoken";
 // import bodyParser from "body-parser";
 // import { exec } from "child_process";
@@ -132,7 +135,7 @@ const transporter = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
     user: 'varunrunrunrun@gmail.com', // Replace with your Gmail email address
-    pass: 'bpip bbel wnsj txqz' // Replace with your Gmail password or application-specific password if using 2FA
+    pass: gmailPin // Replace with your Gmail password or application-specific password if using 2FA
   }
 });
 
